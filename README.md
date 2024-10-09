@@ -12,7 +12,7 @@ A Java-based Tic Tac Toe game with a graphical user interface (GUI) using Swing.
 - [License](#license)
 
 ## Features
-- Multiplayer Tic Tac Toe game with 2 players.
+- Multiplayer Tic Tac Toe game with 2 automated players.
 - Server-client architecture for network-based play.
 - Automatic reconnection in case of a client disconnect.
 - Synchronization of game state across clients.
@@ -44,39 +44,40 @@ A Java-based Tic Tac Toe game with a graphical user interface (GUI) using Swing.
    ```bash
    java -cp target/tictactoe-1.0-SNAPSHOT.jar com.example.tictactoe.MainApp
    ```
-###Alternative: Running in IntelliJ IDEA
+### Alternative: Running in IntelliJ IDEA
 1. Import the project into IntelliJ IDEA.
 2. Build and run the MainApp class for the server and client modes.
-##How to Play
+## How to Play
 1. The server should be started first.
 2. Once the server is running, clients can connect using the provided GUI.
 3. Players take turns by clicking on the grid to place their marks (X or O).
 4. If a player disconnects, the game pauses and waits for the player to reconnect.
 5. The game can resume from where it left off, with the game state synchronized between both clients.
-##Testing
+## Testing
 This project includes unit tests and integration tests using JUnit and Mockito. To run tests:
    ```bash
    mvn test
    ```
 For integration tests, the Awaitility library is used to handle asynchronous interactions between the server and clients.
-##Project Structure
+## Project Structure
 ```bash
- TicTacToe/
-│
-├── src/main/java/com/example/tictactoe/
-│   ├── gui/                # GUI components (Swing)
-│   ├── model/              # Game models (Game, GameState)
-│   ├── net/                # Server and client networking code
-│   ├── service/            # Game state translation (e.g., HTML)
-│   └── MainApp.java        # Main entry point
-│
-├── src/test/java/com/example/tictactoe/
-│   └── All related unit and integration tests
-│
-├── pom.xml                 # Maven configuration
-└── README.md               # Project documentation
+  TicTacToe/
+  │
+  ├── src/main/java/com/example/tictactoe/
+  │   ├── config/             # Network configuration
+  │   ├── gui/                # GUI components (Swing)
+  │   ├── model/              # Game models (Game, GameState)
+  │   ├── net/                # Server and client networking code
+  │   ├── service/            # Game state translation (e.g., HTML)
+  │   └── MainApp.java        # Main entry point
+  │
+  ├── src/test/java/com/example/tictactoe/
+  │   └── All related unit and integration tests
+  │
+  ├── pom.xml                 # Maven configuration
+   ── README.md               # Project documentation
    ```
-##Contributing
+## Contributing
 Contributions are welcome! Please follow these steps:
 
 1. Fork the repository.
@@ -84,5 +85,5 @@ Contributions are welcome! Please follow these steps:
 3. Commit your changes (git commit -am 'Add some feature').
 4. Push to the branch (git push origin feature-branch).
 5. Create a Pull Request.
-##License
+## License
 This project is licensed under the MIT License. See the LICENSE file for details.
